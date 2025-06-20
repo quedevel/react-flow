@@ -1,0 +1,33 @@
+.react-calendar {
+  width: 100%;
+}
+
+.react-calendar__tile.saturday {
+  color:#6560ff;
+}
+
+.react-calendar__tile.sunday {
+  color:#ff8349;
+}
+
+/*.rbc-header:nth-child(1), .rbc-header:nth-child(7) > span {*/
+/*  color: red;*/
+/*}*/
+
+.rbc-date-cell:nth-child(1):not(.rbc-off-range), .rbc-date-cell:nth-child(7):not(.rbc-off-range) > button {
+  color: red;
+}
+
+.rbc-event {
+  background-color: #ffffff !important;
+}
+
+.rbc-events-container {
+  margin-right: 0px !important;
+  border-left: 0;
+}
+
+.rbc-month-row .rbc-today {
+  border: 1px solid;
+  background-color: #ffffff;
+}

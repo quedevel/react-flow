@@ -1,26 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.css'
+import { Route, Routes } from 'react-router-dom'
+import { ReactFlowProvider } from '@xyflow/react'
+import { DnDProvider } from './context/DnDContext'
+import Workflow from './pages/Workflow'
+import Schedule from './pages/Schedule'
+import History from './pages/History'
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{ height: '100vh', display: 'flex', flexDirection: 'column' }}>
+      <ReactFlowProvider>
+        <DnDProvider>
+          <Routes>
+            <Route path={'/'} element={<Workflow />} />
+            <Route path={'/schedule'} element={<Schedule />} />
+            <Route path={'/history'} element={<History />} />
+          </Routes>
+        </DnDProvider>
+      </ReactFlowProvider>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

@@ -1,46 +1,56 @@
-# Getting Started with Create React App
+## Folder structure
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+```scss
+/src (워크스페이스/프로젝트)
+  │── assets/               # 이미지, 아이콘, 폰트 등 정적 리소스
+  │── components/           # 공통 UI 컴포넌트
+  ├── features/             # 도메인별 구성
+  │   ├── editor/           # 예: editor 도메인
+  │   │   ├── components/   # editor 전용 컴포넌트
+  │   │   └── hooks/        # editor 관련 훅
+  │   │── executions/       # 예: executions 도메인
+  │   │   ├── components/   # executions 전용 컴포넌트
+  │   │   └── hooks/        # executions 관련 훅
+  ├── pages/                # 라우트 단위 페이지
+  │── hooks/                # 공통 커스텀 훅
+  │── context/              # 상태 관리 (React Context, Recoil, Zustand 등)
+  ├── services/             # API 통신 관련 함수 모음 (axios 인스턴스 등)
+  │── utils/                # 유틸리티 함수
+  │── types/                # TypeScript 타입 정의
+  │── App.tsx
+  │── index.tsx             # 엔트리포인트
+```
 
-## Available Scripts
+## Naming Convention
 
-In the project directory, you can run:
+* kebab-case
 
-### `npm start`
+```scss
+// basic-flow.tsx
+function BasicFlow(){ ... }
+export default BasicFlow;
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+// use-flow.ts
+function UseFlow(){ ... }
+export default UseFlow;
+```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## VSCode Coding Formatter
 
-### `npm test`
+1. File > Preferences > Settings
+2. Search settings 'default formatter' > [Prettier - Code formatter]
+3. Search settings 'format on' > Check [Format On Paste], [Format On Save]
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Commit message convention
 
-### `npm run build`
+* 타입
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+| type     | description                 |
+|----------|-----------------------------|
+| feat     | 새로운 기능 추가                   |
+| fix      | 버그수정                        |
+| docs     | 문서 관련 변경                    |
+| style    | 코드 포맷팅, 세미콜론 누락 등 스타일 관련 변경 |
+| refactor | 코드 리팩토링                     |
+| test     | 테스트 관련 코드 추가 또는 수정          |
+| chore    | 빌드, 배포 패키지 관리 등의 기타 변경      |
