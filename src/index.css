@@ -1,4 +1,6 @@
 @import "xy-theme.css";
+@import "@rsagiev/gantt-task-react-19/dist/index.css";
+@import 'react-js-cron/dist/styles.css';
 
 @font-face {
   font-family: NanumPenScript;
@@ -83,4 +85,17 @@ body * {
     width: 20%;
     max-width: 250px;
   }
+}
+
+.react-flow__node.highlight {
+  background-color: #f30f0f;
+  color: white;
+}
+
+/* Gantt 스타일 오버라이드 */
+.gantt-table .gantt-table-header > div:nth-child(2),
+.gantt-table .gantt-table-header > div:nth-child(3),
+.gantt-table .gantt-table-data > div > div:nth-child(2),
+.gantt-table .gantt-table-data > div > div:nth-child(3) {
+  display: none;
 }
