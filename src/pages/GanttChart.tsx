@@ -1,5 +1,8 @@
 import Header from '../components/Header'
 import { Gantt, Task, ViewMode } from '@rsagiev/gantt-task-react-19'
+import TaskListTableDefault from '../components/TaskListTableDefault'
+import TaskListHeaderDefault from '../components/TaskListHeaderDefault'
+import StandardTooltipContent from '../components/StandardTooltipContent'
 
 const tasks: Task[] = [
   {
@@ -67,15 +70,15 @@ const GanttChart = () => {
       <div>
         <Gantt
           tasks={tasks}
-          TooltipContent={() => null}
           viewMode={ViewMode.Hour}
           onClick={task => {
             if (task.dependencies && task.dependencies.length > 0 && task.dependencies[0] === "fail") {
               alert(task.dependencies[1])
             }
           }}
-          TaskListHeader={() => null}
-          TaskListTable={() => null}
+          TooltipContent={props => <StandardTooltipContent {...props} />}
+          TaskListHeader={props => <TaskListHeaderDefault showFromTo={false} {...props}/>}
+          TaskListTable={props => <TaskListTableDefault showFromTo={false} {...props} />}
         />
       </div>
     </div>
